@@ -1,0 +1,1040 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Voxweave</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.5.0/slimselect.css" rel="stylesheet"></link>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+	<style>
+		.toggle-btn-addPrompt {
+			width: 40px;
+			text-align: center;
+			display: inline-block;	
+		}
+
+		.toggle-btn-input {
+            width: 40px;
+            text-align: center;
+			display: inline-block;
+			margin-left: 10px;		
+		}
+
+		.toggle-btn-output {
+            width: 40px;
+            text-align: center;
+			display: inline-block;
+			margin-left: 10px;	
+		}
+		
+		.prompt-set {
+		  max-width: 600px; /* Adjust as necessary */
+		}
+		
+		#additional-prompts select, 
+		#additional-prompts input[type="text"] {
+		  width: 100%;
+		}
+		
+		#errorMessage {
+			position: relative;
+			display: none;
+		}
+
+		#closeErrorButton {
+			position: absolute;
+			top: 10px;  /* Add 10px of space from the top edge */
+			right: 10px;  /* Add 10px of space from the right edge */
+			color: black;  /* Change the color of the button text to black */
+			background-color: rgba(255, 255, 255, 0.3);  /* Make the background color white with 30% opacity */
+			border: none;  /* Remove the default button border */
+		}
+		
+		#startRecordButton,
+		#stopRecordButton,
+		#saveRecordButton,
+		#transcribeButton, 
+		#processTextButton, 
+		#save-configuration, 
+		#load-configuration,
+		#add-prompt		{
+			width: 130px;
+		}
+
+		#transcribeAndProcessButton {
+			width: calc(2 * 130px + 5px); /* 2 times width of single button + margin (assuming 10px margin) */
+		}
+
+		#file {
+			width: 80%;
+			max-width: 500px;
+		}
+		
+		.label-container {
+		  width: 125px;
+		  height: 35px; /* adjust as needed */
+		  font-size: 1em; /* adjust as needed */
+		}
+
+		.label-background {
+			background-color: #f8f9fa; /* Light grey color similar to Bootstrap button */
+			border-radius: .25rem; /* Rounded corners similar to Bootstrap button */
+			padding: .5rem; /* Some padding to space the text away from the edges */
+		}
+		
+
+    </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Voxweave</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
+        <!-- <li class="nav-item"> -->
+          <!-- <a class="nav-link" href="#">Link1</a> -->
+        <!-- </li> -->
+        <!-- <li class="nav-item"> -->
+          <!-- <a class="nav-link" href="#">Link2</a> -->
+        <!-- </li> -->
+        <!-- <li class="nav-item"> -->
+          <!-- <a class="nav-link" href="#">User Account</a> -->
+        <!-- </li> -->
+      <!-- </ul> -->
+    </div>
+    <div class="d-lg-flex align-items-center">
+      <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#settingsModal">
+        <i class="bi bi-gear"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="settingsModalLabel">Settings</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="settings-form">
+          <div class="mb-3">
+            <label for="openai-api-key" class="form-label">OpenAI API Key</label>
+            <input type="password" class="form-control" id="openai-api-key">
+          </div>
+          <div class="mb-3">
+            <label for="assemblyai-api-key" class="form-label">AssemblyAI API Key</label>
+            <input type="password" class="form-control" id="assemblyai-api-key">
+          </div>
+          <button type="button" class="btn btn-primary" id="save-api-keys">Save API Keys</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %}
+	<div id="errorMessage" class="alert alert-danger">
+		<span id="errorText"></span>
+		<button id="closeErrorButton" type="button" class="close">&times;</button>
+	</div>
+
+	<form method="post" enctype="multipart/form-data" id="uploadForm">
+        <div class="mb-3">
+            <label for="file">Choose an audio file</label>
+            <input type="file" class="form-control" id="file" name="file" accept=".mp3,.wav">
+        </div>
+	<button id="startRecordButton" class="btn btn-danger" type="button">Record</button>
+    <button id="stopRecordButton" class="btn btn-danger" style="display:none;" type="button">Stop</button>
+	<button id="saveRecordButton" class="btn btn-success" disabled type="button">Save</button>
+ 
+    <div id="recordedFileLabel" class="mt-1" style="display:none;"></div>
+	<div class="mt-0">
+		<button type="submit" class="btn btn-primary mt-4 mb-2" id="transcribeButton">
+		  <span id="transcribeSpinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display:none;"></span>
+		  Transcribe
+		</button>
+		<button type="button" class="btn btn-success mt-4 mb-2" id="processTextButton" onclick="promptChainProcessing()">
+		  <span id="processSpinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display:none;"></span>
+		  Process
+		</button>
+	</div>  
+  </form>
+
+	<div>
+		<button type="button" class="btn btn-primary ml-3 mb-4" id="transcribeAndProcessButton">
+		  <span id="transcribeAndProcessSpinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display:none;"></span>
+		  Transcribe and Process
+		</button>	
+	</div>
+	<div class="mt-0">
+		<button id="save-configuration" class="btn btn-primary mr-3">Save Prompts</button>
+		<button id="load-configuration" class="btn btn-secondary">Load Prompts</button>
+		<input type="file" id="file-input" style="display: none;">
+	</div>
+
+    <div class="mt-2 d-inline-block">
+		<button id="add-prompt" onclick="addPrompt()" class="btn btn-secondary d-inline-block">Add Prompt</button>
+		<button class="btn btn-secondary toggle-btn toggle-btn-addPrompt d-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#additional-prompts" aria-controls="collapseExample">
+	      -
+	    </button>
+	</div>  
+	<div id="additional-prompts" class="collapse show mt-3 mb-3"></div>
+
+	<div class="d-flex align-items-center mt-1">
+		<div class="d-flex align-items-center justify-content-center label-background label-container" data-bs-toggle="collapse" data-bs-target="#inputTextWrapper" aria-controls="inputTextWrapper">
+			<h2 class="mb-0">Input:</h2>
+		</div>
+		<div class="ml-3 mt-2">
+			<button class="btn btn-secondary toggle-btn toggle-btn-input" type="button" data-bs-toggle="collapse" data-bs-target="#inputTextWrapper" aria-controls="inputTextWrapper">
+			-
+			</button>
+		</div>
+	</div>
+
+	<div id="inputTextWrapper" class="collapse show">
+		<div class="row">
+			<div class="col-12">
+				<textarea id="inputText" class="form-control" rows="10"></textarea>
+			</div>
+		</div>
+	</div>
+
+	<div class="mt-3">
+		<div class="d-flex align-items-center">
+			<div class="d-flex align-items-center justify-content-center label-background label-container" data-bs-toggle="collapse" data-bs-target="#chatgpt-responses-result" aria-controls="chatgpt-responses-result">
+				<h2 class="mb-0">Output:</h2>
+			</div>
+			<div class="ml-3">
+				<button class="btn btn-secondary toggle-btn toggle-btn-output" type="button" data-bs-toggle="collapse" data-bs-target="#chatgpt-responses-result" aria-controls="chatgpt-responses-result">
+				-
+				</button>
+			</div>
+		</div>
+		<div id="chatgpt-responses-result" class="border p-3 collapse show"></div>
+	</div>
+
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.5.0/slimselect.min.js"></script>
+<script>
+let audioBlob;
+let startRecordButton = document.getElementById("startRecordButton");
+let stopRecordButton = document.getElementById("stopRecordButton");
+let audioStream;
+let mediaRecorder;
+let recordedChunks = [];
+let conversationHistory = [];
+let promptCount = 0;
+let slimSelectInstances = new Map();
+let promptDependencies = new Map();
+
+// Get the form element
+const uploadForm = document.getElementById("uploadForm");
+
+// Various event listeners
+startRecordButton.addEventListener("click", startRecording);
+stopRecordButton.addEventListener("click", stopRecording);
+uploadForm.addEventListener("submit", handleTranscribeButtonClick); // Assuming "transcribeButton" was part of the form submission
+
+const transcribeAndProcessButton = document.getElementById("transcribeAndProcessButton");
+transcribeAndProcessButton.addEventListener("click", handleTranscribeAndProcessButtonClick);
+saveRecordButton.addEventListener('click', saveRecording);
+
+function hideErrorMessage() {
+    let errorMessageDiv = document.getElementById("errorMessage");
+    errorMessageDiv.style.display = "none";
+}
+// Get the close button element for the error div
+const closeErrorButton = document.getElementById("closeErrorButton");
+// Add event listener to button
+closeErrorButton.addEventListener("click", function() {
+    hideErrorMessage();
+});
+
+//Event listener for clearing the recorded file when uploading new file
+let fileInput = document.getElementById('file');
+fileInput.addEventListener('change', () => {
+    // When a new file is selected, clear the recording
+    audioBlob = null;
+    recordedChunks = [];
+   
+   // Disable the "Save Recording" button and reset the label
+	saveRecordButton.disabled = true; 
+    let recordedFileLabel = document.getElementById('recordedFileLabel');
+    recordedFileLabel.textContent = '';
+    recordedFileLabel.style.display = 'none';
+});
+
+//Button spinner constants
+const buttonConfigs = [
+  {buttonId: 'transcribeButton', spinnerId: 'transcribeSpinner'},
+  {buttonId: 'processTextButton', spinnerId: 'processSpinner'},
+  {buttonId: 'transcribeAndProcessButton', spinnerId: 'transcribeAndProcessSpinner'},
+];
+
+//Transcription and process button disabling and spinner array
+function toggleButtons(configs, activeIndex, disableAll = false) {
+  configs.forEach((config, index) => {
+    let button = document.getElementById(config.buttonId);
+    let spinner = document.getElementById(config.spinnerId);
+
+    let enableAll = activeIndex === -1;
+    let disable = disableAll || (!enableAll && index !== activeIndex);
+    let showSpinner = !enableAll && index === activeIndex;
+
+    button.disabled = disable;
+    spinner.style.display = showSpinner ? 'inline-block' : 'none';
+  });
+}
+
+document.getElementById('save-api-keys').addEventListener('click', () => {
+    const openaiKey = document.getElementById('openai-api-key').value;
+    const assemblyaiKey = document.getElementById('assemblyai-api-key').value;
+    
+    localStorage.setItem('openaiKey', openaiKey);
+    localStorage.setItem('assemblyaiKey', assemblyaiKey);
+
+    alert('API keys saved successfully!');
+});
+
+//COLLAPSE PROMPTS, INPUTTEXT AND RESPONSE BUTTONS
+function manageCollapse(buttonSelector, targetSelector) {
+  // get the toggle button and the collapsible element
+  var toggleButton = document.querySelector(buttonSelector);
+  var collapsible = document.querySelector(targetSelector);
+
+  // when the collapse animation completes, update the button symbol
+  collapsible.addEventListener('shown.bs.collapse', function () {
+    toggleButton.textContent = '-';
+  });
+
+  collapsible.addEventListener('hidden.bs.collapse', function () {
+    toggleButton.textContent = '+';
+  });
+}
+
+manageCollapse('.toggle-btn[data-bs-target="#additional-prompts"]', '#additional-prompts');
+manageCollapse('.toggle-btn[data-bs-target="#inputTextWrapper"]', '#inputTextWrapper');
+manageCollapse('.toggle-btn[data-bs-target="#chatgpt-responses-result"]', '#chatgpt-responses-result');
+
+
+<!-- function displayErrorMessage(message) { -->
+  <!-- console.log("displayErrorMessage called with message:", message); -->
+  <!-- const chatMessages = document.getElementById("chat-messages"); -->
+  <!-- const errorMessage = document.createElement("div"); -->
+  <!-- errorMessage.textContent = message; -->
+  <!-- errorMessage.style.color = "red"; -->
+  <!-- chatMessages.appendChild(errorMessage); -->
+<!-- } -->
+
+function startRecording() {
+    console.log('Start recording function called');
+    
+	// Confirm if user wants to overwrite existing recording or file selection
+    if ((document.getElementById('file').files.length > 0 || audioBlob) && 
+        !confirm("Starting a new recording will discard the current recording or file selection. Do you want to proceed?")) {
+        return;
+    }
+    // Clear file selection and recording
+    document.getElementById('file').value = '';
+    audioBlob = null;
+    recordedChunks = [];
+	
+	// Request access to the user's microphone
+	navigator.mediaDevices.getUserMedia({ audio: true })
+		.then(stream => {
+			// Assign the MediaStream to the audioStream variable
+			audioStream = stream;
+			mediaRecorder = new MediaRecorder(audioStream);
+			mediaRecorder.start();
+			// When the MediaRecorder has data available, add it to recordedChunks
+            mediaRecorder.ondataavailable = function (e) {
+                recordedChunks.push(e.data);
+                console.log('MediaRecorder has data available, adding to recordedChunks');
+            };
+			// Event listener for when the MediaRecorder is stopped
+			mediaRecorder.onstop = function () {  
+				// Convert recorded chunks to a Blob
+				let blob = new Blob(recordedChunks, { 'type': 'audio/wav' });
+				recordedChunks = [];
+				audioBlob = blob;
+				
+				// Enable the "Save Recording" button
+				saveRecordButton.disabled = false;
+
+				// Hide the "Stop" button and show the "Start"
+				stopRecordButton.style.display = "none";
+				startRecordButton.style.display = "inline-block";
+				
+				// Display a message to indicate a recording is ready
+				let recordedFileLabel = document.getElementById('recordedFileLabel');
+				recordedFileLabel.textContent = 'Recording is ready for transcription.';
+				recordedFileLabel.style.display = 'block';
+				
+				// Stop the audio tracks here
+                if (audioStream) {
+                    audioStream.getTracks().forEach(track => track.stop());
+                    audioStream = null;
+                }
+
+			};
+            // Hide the "Start" button and show the "Stop" button
+            startRecordButton.style.display = "none";
+            stopRecordButton.style.display = "inline-block";
+        }).catch(err => {
+            console.error('Error starting the recording:', err);
+        });
+}
+
+function stopRecording() {
+    console.log('Stop recording function called');
+    mediaRecorder.stop();
+}
+
+function saveRecording() {
+    if (audioBlob) {  // check that there's something to save
+        const a = document.createElement('a');
+        const blobUrl = URL.createObjectURL(audioBlob);
+        // Generate a timestamp and format it for the filename
+        let timestamp = new Date().toISOString();
+        timestamp = timestamp.replace(/:/g, '_').replace('T', '_').replace('Z', '');
+        // Append the timestamp to the filename
+        a.href = blobUrl;
+        a.download = 'recording_' + timestamp + '.wav';
+        a.style.display = 'none';
+
+        document.body.appendChild(a);
+        a.click();
+
+        setTimeout(() => {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
+        }, 100);
+    } else {
+        console.log('No recording to save');
+    }
+}
+
+// Helper function to get the file extension from a MIME type.
+function getExtensionFromMIME(mimeType) {
+    // Map common audio MIME types to their corresponding file extensions.
+    switch (mimeType) {
+        case "audio/wav":
+            return ".wav";
+        case "audio/mpeg":
+            return ".mp3";
+        case "audio/mp4":
+            return ".m4a";
+        case "audio/flac":
+            return ".flac";
+        case "audio/aac":
+            return ".aac";
+        default:
+            // Default to .wav for unknown types.
+            return ".wav";  
+    }
+}
+
+// Function to upload the audio blob to the server.
+async function upload(blob) {
+    // Create a new FormData object.
+    let formData = new FormData();
+     // Check if the API key is stored in local storage.
+    let assemblyaiKey = localStorage.getItem('assemblyaiKey');
+    if (!assemblyaiKey) {
+        alert("Please set your AssemblyAI API Key in the settings.");
+        throw new Error("AssemblyAI API Key not set");
+    }
+    // Get the correct file extension from the blob's MIME type.
+    let extension = getExtensionFromMIME(blob.type);
+    let filename = `audio${extension}`;
+    // Append the audio blob to the FormData object with the generated filename.
+    formData.append("file", blob, filename);
+    formData.append("filename", filename);
+    formData.append("api_key", assemblyaiKey);
+    // Send a POST request to the server with the FormData object.
+    let response = await fetch(`/transcribe`, {
+    method: "POST",
+    body: formData,
+    });
+    // Get the JSON response from the server.
+    let jsonResponse = await response.json();
+    if (!response.ok) {
+        // Throw an error if the response status is not OK.
+        console.error(`Error during upload: ${jsonResponse}`);
+        throw new Error(JSON.stringify(jsonResponse, null, 2));
+    }
+	// Return the transcription from the JSON response.
+    return jsonResponse.transcription;
+}
+
+// Function to handle file input and process audio
+async function handleTranscribeButtonClick(event) {
+  event.preventDefault();
+  
+  // Initially, disable all buttons but show spinner on Transcribe button
+  toggleButtons(buttonConfigs, 0, true);
+  
+  let fileInput = document.getElementById("file");
+  let selectedFile = fileInput.files.length > 0 ? fileInput.files[0] : null;
+  try {
+    // Upload the audio and get the transcription
+    let text = await uploadAudioAndTranscribe(selectedFile, audioBlob);
+    
+    // Stage 1: Process Button active
+    toggleButtons(buttonConfigs, 1);
+    
+    console.log("Received transcription:", text);
+    const inputText = document.getElementById("inputText");
+    inputText.value = text;
+    return true;  // Indicate that the function completed successfully
+  } catch(err) {
+    console.error("An error occurred while uploading the recording:", err);
+    let errorMessage = err.error ? JSON.stringify(err.error, null, 2) : err.message;
+    let errorTextSpan = document.getElementById("errorText");
+    errorTextSpan.innerText = "An error occurred while uploading the recording: " + errorMessage;
+    let errorMessageDiv = document.getElementById("errorMessage");
+    errorMessageDiv.style.display = "block";
+    return false;  // Indicate that an error occurred
+  } finally {
+    // Regardless of the outcome, re-enable the buttons and hide the spinner
+    // Stage 2: All buttons active
+	toggleButtons(buttonConfigs, -1);
+  }
+}
+
+// Function to call the upload function with the audio and return the transcription
+async function uploadAudioAndTranscribe(selectedFile, audioBlob) {
+    if (!selectedFile && !audioBlob) {
+        console.log("No audio data available");
+        // Reject the Promise with an error
+        throw new Error("Please choose an audio file or record your voice.");
+    }
+    console.log("Selected file or audio blob exists");
+    // Use the selectedFile if it exists, else use the audioBlob
+    let audioData = selectedFile || audioBlob;
+    console.log("Uploading audio data");
+    // Return the transcription text
+    return await upload(audioData);
+}
+
+// Button click handler for transcribe and process button
+async function handleTranscribeAndProcessButtonClick(event) {
+    try {
+        // First, handle the transcribe button click
+        let transcribeSuccessful = await handleTranscribeButtonClick(event);
+        
+        // Only start the prompt processing if the transcription was successful
+        if (transcribeSuccessful) {
+            await promptChainProcessing();
+        }
+    } catch(err) {
+        console.error("An error occurred:", err);
+        let errorMessage = err.error ? JSON.stringify(err.error, null, 2) : err.message;
+        let errorTextSpan = document.getElementById("errorText");
+        errorTextSpan.innerText = "An error occurred: " + errorMessage;
+        let errorMessageDiv = document.getElementById("errorMessage");
+        errorMessageDiv.style.display = "block";
+    }
+}
+
+function addPrompt() {
+  const promptContainer = document.getElementById("additional-prompts");
+  const newPromptContainer = document.createElement("div");
+  newPromptContainer.className = "prompt-set mb-3"; // Added "prompt-set" class
+
+  promptCount++; 
+
+  const labelDiv = document.createElement("div");
+  labelDiv.id = `prompt-label-${promptCount}`;
+  labelDiv.textContent = `Prompt ${promptCount}`;
+  newPromptContainer.appendChild(labelDiv);
+  
+  // Source selector 
+  const sourceSelectorRow = document.createElement("div"); // Create a new row
+  sourceSelectorRow.className = "row";
+
+  const sourceSelectorCol = document.createElement('div'); // Create a new column
+  sourceSelectorCol.className = "col-12"; // Make it full width
+
+  // Create select for the sources
+  const sourceSelector = document.createElement('select');
+  sourceSelector.id = `source-selector-${promptCount}`;
+  sourceSelector.multiple = "multiple";
+  
+  sourceSelectorCol.appendChild(sourceSelector); // Append the sourceSelector to its column
+  sourceSelectorRow.appendChild(sourceSelectorCol);
+  newPromptContainer.appendChild(sourceSelectorRow);
+  
+   // Create placeholder option
+  const placeholderOption = document.createElement('option');
+  placeholderOption.dataset.placeholder = "true"; // This sets the data-placeholder attribute to true
+  sourceSelector.appendChild(placeholderOption);
+
+  // Define sources array
+  const sources = ["Input Text"].concat(
+    Array.from({ length: promptCount - 1 }, (_, i) => `Prompt ${i + 1}`)
+  );
+
+  sources.forEach((source, index) => {
+    const option = document.createElement('option');
+    option.value = index;
+    option.textContent = source;
+    sourceSelector.appendChild(option);
+  });
+
+	// Set a timeout to delay the initialization of Slim Select
+	setTimeout(() => {
+	  let slimSelectInstance = new SlimSelect({
+		select: `#source-selector-${promptCount}`,
+		events: {
+		  afterChange: (newVal) => {
+			updateDependencies(promptCount, newVal);
+		  }
+		},
+		settings: {
+		  closeOnSelect: false,
+		  showSearch: false,    
+		  maxValuesShown: 3, // Default 20
+		  maxValuesMessage: '{number} values selected', // Default '{number} selected'
+		  allowDeselect: true,
+		  placeholderText: 'Add Source',
+
+
+		},
+	  });
+	  // Store the SlimSelect instance in the Map
+	  slimSelectInstances.set(`source-selector-${promptCount}`, slimSelectInstance);
+	}, 0);
+  
+  // Model selector
+  const modelSelectorRow = document.createElement("div"); // Create a new row
+  modelSelectorRow.className = "row";
+  
+  const modelSelectorCol = document.createElement('div'); // Create a new column
+  modelSelectorCol.className = "col-12"; // Make it full width
+
+  const modelSelector = document.createElement("select");
+  modelSelector.id = `model-selector-${promptCount}`;
+  modelSelector.name = modelSelector.id;
+  
+  modelSelectorCol.appendChild(modelSelector); // Append the modelSelector to its column
+  modelSelectorRow.appendChild(modelSelectorCol);
+  newPromptContainer.appendChild(modelSelectorRow);
+  
+  const models = ["gpt-3.5-turbo", "gpt-4", "gpt-4-32k"]; // Replace with actual model names or options
+  models.forEach((model, index) => {
+    const option = document.createElement("option");
+    option.value = index;
+    option.text = model;
+    modelSelector.add(option);
+    <!-- console.log(`Model selector option value for prompt ${promptCount}: ${option.value}`); -->
+  });
+
+  // System prompt input
+  const systemPromptRow = document.createElement("div"); // Create a new row
+  systemPromptRow.className = "row";
+  
+  const systemPromptCol = document.createElement('div'); // Create a new column
+  systemPromptCol.className = "col-12"; // Make it full width
+  
+  const systemPrompt = document.createElement("input");
+  systemPrompt.type = "text";
+  systemPrompt.name = `system-prompt-${promptCount}`;
+  systemPrompt.id = systemPrompt.name;
+  systemPrompt.placeholder = `Enter system prompt ${promptCount}`;
+
+  systemPromptCol.appendChild(systemPrompt); // Append the systemPrompt to its column
+  systemPromptRow.appendChild(systemPromptCol);
+  newPromptContainer.appendChild(systemPromptRow);
+
+  // User prompt input
+  const userPromptRow = document.createElement("div"); // Create a new row
+  userPromptRow.className = "row";
+  
+  const userPromptCol = document.createElement('div'); // Create a new column
+  userPromptCol.className = "col-12"; // Make it full width
+ 
+  const userPrompt = document.createElement("input");
+  userPrompt.type = "text";
+  userPrompt.name = `user-prompt-${promptCount}`;
+  userPrompt.id = userPrompt.name;
+  userPrompt.placeholder = `Enter user prompt ${promptCount}`;
+
+  userPromptCol.appendChild(userPrompt); // Append the userPrompt to its column
+  userPromptRow.appendChild(userPromptCol);
+  newPromptContainer.appendChild(userPromptRow);
+  
+  promptContainer.appendChild(newPromptContainer);
+
+//FUNCTION TO POPULATE PROMPT DEPENDENCIES MAP
+function updateDependencies(promptId, newValues) {
+  // Remove the prompt from its current dependencies
+  removePromptFromDependencies(promptId);
+
+  // Add the prompt to its new dependencies
+  if (newValues.length !== 0) {
+    const sourceKey = JSON.stringify(newValues.sort());
+    if (!promptDependencies.has(sourceKey)) {
+      promptDependencies.set(sourceKey, []);
+    }
+    promptDependencies.get(sourceKey).push(promptId);
+  }
+}
+
+//FUNCTION TO REMOVE DEPENDENCY WHEN A PROMPT IS REMOVED
+function removePromptFromDependencies(promptId) {
+  promptDependencies.forEach((dependentPrompts, sources) => {
+    const index = dependentPrompts.indexOf(promptId);
+    if (index !== -1) {
+      dependentPrompts.splice(index, 1);
+    }
+    if (dependentPrompts.length === 0) {
+      promptDependencies.delete(sources);
+    }
+  });
+}
+
+}
+
+function savePromptConfiguration() {
+  const promptContainer = document.getElementById("additional-prompts");
+  let prompts = [];
+  for (let i = 0; i < promptContainer.children.length; i++) {
+    let promptDiv = promptContainer.children[i];
+	let sourceSelectorId = `source-selector-${i+1}`;
+	let slimSelectInstance = slimSelectInstances.get(sourceSelectorId);
+	if (!slimSelectInstance) {
+	  alert(`Error: Unable to save configuration. SlimSelect instance not found for ${sourceSelectorId}.`);
+	  return; // Stop the save operation
+	}
+	let selectedValues = slimSelectInstance.getSelected();
+    let modelSelector = promptDiv.querySelector(`#model-selector-${i+1}`);
+    let systemPrompt = promptDiv.querySelector(`#system-prompt-${i+1}`);
+    let userPrompt = promptDiv.querySelector(`#user-prompt-${i+1}`);
+
+	// Check if all elements exist and have the expected values, handle errors otherwise
+	if (!slimSelectInstance || !modelSelector || !systemPrompt || !userPrompt) {
+	  alert(`Error: Unable to save configuration. Prompt ${i+1} is incomplete or has unexpected values.`);
+	  return; // Stop the save operation
+	}
+    
+	// Create JSON object for each prompt
+	let prompt = {
+	  source: selectedValues,
+	  model: modelSelector.value,
+	  systemPrompt: systemPrompt.value,
+	  userPrompt: userPrompt.value
+	};
+    
+    // Add the prompt to the prompts array
+    prompts.push(prompt);
+  }
+
+  // Convert the prompts array into a JSON string
+  let promptConfiguration = JSON.stringify(prompts);
+
+  // Return the prompt configuration
+  return promptConfiguration;
+}
+
+function saveToFile(content, fileName) {
+  // Create a Blob with the content
+  let blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+  
+  // Create a URL for the Blob
+  let url = URL.createObjectURL(blob);
+
+  // Create an 'a' element
+  let a = document.createElement("a");
+
+  // Set the 'href' and 'download' attributes
+  a.href = url;
+  a.download = fileName;
+
+  // Append the 'a' element to the body
+  document.body.appendChild(a);
+
+  // Trigger a click event on the 'a' element
+  a.click();
+
+  // Remove the 'a' element from the body
+  document.body.removeChild(a);
+}
+
+document.getElementById("save-configuration").addEventListener("click", function() {
+  // Call savePromptConfiguration
+  let promptConfiguration = savePromptConfiguration();
+
+  // Save the returned JSON string to a file
+  saveToFile(promptConfiguration, "promptConfiguration.json");
+});
+
+async function loadPromptConfiguration(promptConfiguration) {
+  console.log('Loading configuration:', promptConfiguration);
+
+  try {
+    // Parse the JSON string
+    let prompts = JSON.parse(promptConfiguration);
+
+    // Reset promptCount
+    promptCount = 0;
+
+    // Clear existing prompts
+    const promptContainer = document.getElementById("additional-prompts");
+    promptContainer.innerHTML = '';
+
+    // For each prompt in the array
+    for (let i = 0; i < prompts.length; i++) {
+      // Call addPrompt() to create a new prompt, and pause for a delay
+      await new Promise(resolve => {
+        addPrompt();
+        setTimeout(resolve, 0);  // Adjust the delay as needed
+      });
+
+      // Populate the fields with the saved values
+      let promptDiv = promptContainer.children[i];
+	  
+	  let sourceSelectorId = `source-selector-${i+1}`;
+	  let slimSelectInstance = slimSelectInstances.get(sourceSelectorId);
+	  if (slimSelectInstance && prompts[i].source) {
+	    setTimeout(() => slimSelectInstance.setSelected(prompts[i].source), 0);
+      }
+      let modelSelector = promptDiv.querySelector(`#model-selector-${i+1}`);
+      if (modelSelector && prompts[i].model) {
+        modelSelector.value = prompts[i].model;
+      }
+
+      let systemPrompt = promptDiv.querySelector(`#system-prompt-${i+1}`);
+      if (systemPrompt && prompts[i].systemPrompt) {
+        systemPrompt.value = prompts[i].systemPrompt;
+      }
+
+      let userPrompt = promptDiv.querySelector(`#user-prompt-${i+1}`);
+      if (userPrompt && prompts[i].userPrompt) {
+        userPrompt.value = prompts[i].userPrompt;
+      }
+    }
+  } catch (error) {
+    console.error(`Failed to load prompt configuration: ${error.message}`);
+  }
+}
+
+document.getElementById("load-configuration").addEventListener("click", function() {
+  // Trigger a click event on the hidden file input element
+  document.getElementById("file-input").click();
+});
+
+document.getElementById("file-input").addEventListener("change", function(e) {
+  // Get the selected file
+  let file = e.target.files[0];
+  // Create a new FileReader
+  let reader = new FileReader();
+  // Set the onload function
+  reader.onload = function(e) {
+    // Read the file contents
+    let contents = e.target.result;
+    // Pass the contents to loadPromptConfiguration
+    loadPromptConfiguration(contents);
+  };
+  // Read the file as text
+  reader.readAsText(file);
+});
+
+async function callAPI(payload, model) {
+  console.log("callAPI called");
+  let openaiKey = localStorage.getItem('openaiKey');
+  let data;
+
+  if (!openaiKey) {
+    document.getElementById('errorText').innerText = "Please set your OpenAI API Key in the settings.";
+    document.getElementById('errorMessage').style.display = 'block';
+    throw new Error("OpenAI API Key not set");
+  }
+
+  async function makeRequest() {
+    const response = await fetch('/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        messages: payload.conversation_history,
+        model: model,
+        api_key: openaiKey,
+      }),
+    });
+
+    try {
+      data = await response.json();
+      console.log("API Response:", data);
+    } catch (error) {
+      console.error('Error parsing server response:', error);
+      document.getElementById('errorText').innerText = "Unexpected server response.";
+      document.getElementById('errorMessage').style.display = 'block';
+      throw error;
+    }
+
+    if (response.ok) {
+      document.getElementById('errorMessage').style.display = 'none'; // Hide error message when successful
+      return data.choices[0].message;
+    } else {
+      if (data.retry && data.retry === true) {
+        document.getElementById('errorText').innerText = `${data.error} Retrying request...`;
+        throw new Error(data.error); 
+      } else {
+        document.getElementById('errorText').innerText = data.error;
+        document.getElementById('errorMessage').style.display = 'block';
+        throw new Error(data.error);
+      }
+    }
+  }
+
+  let i = 0;
+  while (true) {
+    try {
+      const result = await makeRequest();
+      return result;
+    } catch (error) {
+      console.error(`Error on attempt ${i + 1}:`, error);
+      if (data.retry && i < 3) {
+        // Wait before retrying, delay increases with each attempt
+        await new Promise(r => setTimeout(r, 2 ** i * 1000));
+        i += 1;
+      } else {
+        // After all retries failed, ask the user if they want to keep retrying
+        if (data.retry && confirm('All automatic retries have failed. Do you want to continue retrying?')) {
+          i = 0;  // Reset the counter and start over
+        } else {
+          if(data.retry) {
+            document.getElementById('errorText').innerText += ' User stopped retries. Please try again manually.';
+          }
+          // Re-enable the buttons here, after all retrying attempts have failed and there is no further processing being done
+          toggleButtons(buttonConfigs, -1);
+          throw error;
+        }
+      }
+    }
+  }
+}
+
+
+async function promptChainProcessing() {
+  console.log('Starting promptChainProcessing function with prompts:', promptCount);
+
+  // Get chatGPTResponsesResult element
+  const chatGPTResponsesResult = document.getElementById("chatgpt-responses-result");
+  // Clear output field before starting the processing
+  chatGPTResponsesResult.innerHTML = "";
+
+  // Stage 1: Process Button active
+  toggleButtons(buttonConfigs, 1, true);
+
+  try {
+  const promptResults = [];
+	async function processPromptChain(index) {
+		if (index === 0) {
+			return document.getElementById("inputText").value; // If the index is 0 (input text), return it directly
+		}
+		if (promptResults[index] !== undefined) {
+		  return promptResults[index];
+		}
+		const inputText = await getPromptSourceText(index);    
+		const result = await new Promise((resolve) => {
+		  setTimeout(async () => {
+			const processedResult = await processPrompt(index, promptResults, inputText);
+			resolve(processedResult);
+		  }, 0);
+		});
+		promptResults[index] = result.content; // Store only the content		
+		displayPromptResults(index, promptResults[index]); // Call displayPromptResults right after storing the result
+		
+		if (promptDependencies.has(index)) {
+		  const dependentPromptIndexes = promptDependencies.get(index);
+		  for (const dependentIndex of dependentPromptIndexes) {
+			await processPromptChain(dependentIndex);
+		  }
+		}
+		return promptResults[index];
+	  }
+	async function getPromptSourceText(index) {
+	  // If the index is 0, return the value of the "Input Text" HTML field
+	  if (index === 0) {
+		return document.getElementById("inputText").value;
+	  }
+      // Get the source selector for the current prompt
+      const sources = slimSelectInstances.get(`source-selector-${index}`).getSelected().map(source => parseInt(source, 10));
+	
+	  let sourceTexts = [];
+	  for (const source of sources) {
+		if (source === 0) {
+		  sourceTexts.push(document.getElementById("inputText").value);
+		} else {
+		  // If the source is another prompt, call the processPromptChain function
+		  // with the source, which now returns the content directly
+		  const sourceContent = await processPromptChain(source);
+		  sourceTexts.push(sourceContent);
+		}
+	  }
+	  return sourceTexts.join('\n\n'); // Join the source texts with two newlines
+	}
+	// Process the "input text" first
+	await processPromptChain(0);
+	// Then, process the prompts in the order of their dependencies
+	for (let i = 1; i <= promptCount; i++) {
+		await processPromptChain(i);
+	}   
+	} finally {
+    // Regardless of the outcome, re-enable the buttons and hide the spinner
+    toggleButtons(buttonConfigs, -1);
+  }
+}
+
+async function processPrompt(index, promptResults, inputText = null) {
+  console.log(`Processing prompt ${index}`);
+  if (index === 0) {
+    return null; // Line to handle the case when index is 0
+  }
+  // Get required elements and values
+  const systemPromptId = `system-prompt-${index}`;
+  const userPromptId = `user-prompt-${index}`;
+  const systemPromptElement = document.getElementById(systemPromptId);
+  const userPromptElement = document.getElementById(userPromptId);
+  // Combine inputText with user prompt if inputText is provided
+  const combinedText = inputText ? `${userPromptElement.value} ${inputText}` : userPromptElement.value;
+  const conversationHistory = [
+    { role: "system", content: systemPromptElement.value },
+    { role: "user", content: combinedText },
+  ];
+  const modelSelectorId = `model-selector-${index}`;
+  const modelSelector = document.getElementById(modelSelectorId);
+  const model = modelSelector.options[modelSelector.selectedIndex].text;
+  const result = await callAPI({ conversation_history: conversationHistory }, model);
+  return result;
+}
+
+function displayPromptResults(index, result) {
+  const chatGPTResponsesResult = document.getElementById("chatgpt-responses-result");
+  const responseContainer = document.createElement("div");
+  responseContainer.innerHTML = `<h4>Prompt ${index}:</h4>`;
+  // Add a conditional check to ensure that result is not null before trying to call replace
+  if (result) {
+    responseContainer.innerHTML += result.replace(/\n/g, "<br>");
+  } else {
+    responseContainer.innerHTML += "No response for this prompt.";
+  }
+  chatGPTResponsesResult.appendChild(responseContainer);
+}
+
+</script>
+</body>
+</html>

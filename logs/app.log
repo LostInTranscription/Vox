@@ -1,0 +1,734 @@
+{"time": "2023-06-03 13:58:16,396", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 13:58:16,398", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 13:58:18,163", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 13:58:18,164", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 13:58:20,616", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 13:58:20,617", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 13:58:24,987", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 13:58:24,999", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:15:49,722", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:15:49,723", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:15:50,154", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:15:51,259", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:15:51,259", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:15:51,589", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:15:53,686", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:15:53,687", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:15:54,051", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:15:58,340", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:15:58,341", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:15:58,649", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:20:37,378", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:20:37,380", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:20:37,796", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:20:38,883", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:20:38,888", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:20:39,133", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:20:41,191", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:20:41,192", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:20:41,579", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:20:45,668", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:20:45,669", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:20:45,920", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:21:53,559", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:21:53,561", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:21:54,726", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:21:54,952", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:21:54,954", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:21:55,820", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:21:55,878", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:21:55,878", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:21:56,843", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:21:56,910", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:21:56,911", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:21:57,765", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:21:57,810", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:21:57,811", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:21:58,687", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:21:58,809", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:21:58,810", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:21:59,711", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:21:59,870", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:21:59,872", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:22:00,424", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:22:00,603", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:22:00,604", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:22:02,020", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:25:04,297", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:25:04,297", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:25:04,753", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:25:05,881", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:25:05,882", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:25:06,186", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:25:08,279", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:25:08,280", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:25:08,646", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:25:12,776", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:25:12,777", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:25:13,766", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:32:50,466", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:32:50,469", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:32:50,977", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 14:34:06,353", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:34:06,354", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:34:07,714", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:34:07,830", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:34:07,831", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:34:08,697", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:34:08,840", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:34:08,841", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:34:09,666", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:34:09,760", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:34:09,761", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:34:11,049", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:34:11,200", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:34:11,201", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:34:11,978", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:34:12,046", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:34:12,047", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:34:12,994", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:34:13,057", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:34:13,057", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:34:13,609", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:34:13,758", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:34:13,758", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:34:15,370", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:34:21,073", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:34:21,074", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:34:22,215", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:34:22,378", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:34:22,385", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:34:23,345", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:34:23,494", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:34:23,501", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:34:24,364", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:34:24,517", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:34:24,518", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:34:55,083", "level": "ERROR", "name": "__main__", "message": "RateLimitError during chat request: That model is currently overloaded with other requests. You can retry your request, or contact us through our help center at help.openai.com if the error persists. (Please include the request ID e9a2020712d24941b203087b840e25a7 in your message.)"}
+{"time": "2023-06-03 14:42:48,472", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:42:48,473", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:42:49,721", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:42:49,879", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:42:49,881", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:42:50,732", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:42:50,996", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:42:50,997", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:42:51,648", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:42:51,769", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:42:51,770", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:42:52,980", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:42:53,120", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:42:53,120", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:42:54,009", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:42:54,120", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:42:54,121", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:42:54,924", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:42:54,985", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:42:54,991", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:42:55,851", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:42:55,986", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:42:55,987", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:01,386", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:07,613", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:07,616", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:08,547", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:08,663", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:08,665", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:09,372", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:09,479", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:09,480", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:10,604", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:10,721", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:10,722", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:11,311", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:11,408", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:11,411", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:12,234", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:12,343", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:12,350", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:13,065", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:13,204", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:13,204", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:13,874", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:13,989", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:13,992", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:15,921", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:17,513", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:17,515", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:18,376", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:18,475", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:18,484", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:19,401", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:19,480", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:19,481", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:20,294", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:20,344", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:20,344", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:21,260", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:21,326", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:21,328", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:22,268", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:22,403", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:22,407", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:23,194", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:23,237", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:23,237", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:24,136", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:24,249", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:24,253", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:27,801", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:36,519", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:36,521", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:37,218", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:37,339", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:37,341", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:38,137", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:38,216", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:38,224", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:39,063", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:39,166", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:39,166", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:39,824", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:39,898", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:39,900", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:40,697", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:40,738", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:40,738", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:41,619", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:41,737", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:41,739", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:43:42,439", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:43:42,560", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:43:42,563", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:44:13,061", "level": "ERROR", "name": "__main__", "message": "RateLimitError during chat request: That model is currently overloaded with other requests. You can retry your request, or contact us through our help center at help.openai.com if the error persists. (Please include the request ID f7179589e8ff2739c055c7baf3e359ba in your message.)"}
+{"time": "2023-06-03 14:56:45,670", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:56:45,676", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:56:47,141", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:56:47,269", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:56:47,269", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:56:48,155", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:56:48,307", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:56:48,308", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:56:49,288", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:56:49,414", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:56:49,424", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:56:50,406", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:56:50,498", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:56:50,500", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:56:51,435", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:56:51,559", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:56:51,561", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:56:52,250", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:56:52,382", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:56:52,383", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:56:53,376", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:56:53,570", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:56:53,571", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:56:55,219", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:56:56,683", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:56:56,684", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:56:57,676", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:56:57,822", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:56:57,823", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:56:58,802", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:56:58,849", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:56:58,850", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:56:59,725", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:56:59,889", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:56:59,891", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:00,742", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:00,873", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:00,875", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:01,775", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:01,931", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:01,932", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:02,903", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:03,000", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:03,004", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:04,027", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:04,131", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:04,133", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:05,733", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:07,062", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:07,066", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:07,917", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:07,995", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:07,995", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:08,946", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:09,073", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:09,076", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:09,964", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:10,080", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:10,085", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:10,800", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:10,914", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:10,916", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:12,732", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:12,864", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:12,865", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:13,754", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:13,902", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:13,903", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:14,778", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:14,916", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:14,918", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:16,317", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:17,401", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:17,402", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:18,260", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:18,346", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:18,355", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:19,386", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:19,478", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:19,479", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:20,278", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:20,365", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:20,367", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:21,054", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:21,204", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:21,208", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:22,153", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:22,194", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:22,194", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:22,963", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:23,049", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:23,051", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:23,792", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:23,934", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:23,934", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:25,428", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:26,661", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:26,662", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:27,373", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:27,448", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:27,450", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:28,496", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:28,614", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:28,616", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:29,526", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:29,664", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:29,666", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:30,344", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:30,488", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:30,489", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:31,367", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:31,434", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:31,436", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:32,189", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:32,324", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:32,325", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:33,310", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:33,414", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:33,416", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:34,948", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:35,899", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:35,900", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:43,346", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:43,457", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:43,464", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:44,267", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:44,368", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:44,373", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:45,397", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:45,596", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:45,597", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:46,318", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:46,450", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:46,451", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:47,443", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:47,542", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:47,542", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:48,262", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:48,389", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:48,390", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:49,185", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:49,310", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:49,316", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:50,617", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:51,474", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:51,475", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:52,356", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:52,454", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:52,464", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:53,486", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:53,598", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:53,599", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:54,476", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:54,596", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:54,599", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:55,637", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:55,780", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:55,786", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:56,565", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:56,606", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:56,606", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:57,483", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:57,594", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:57,594", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:58,502", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:57:58,599", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:57:58,600", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:57:59,935", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:30,104", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:30,105", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:30,873", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:30,989", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:30,991", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:31,779", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:31,896", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:31,897", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:32,805", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:32,945", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:32,946", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:33,936", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:34,054", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:34,054", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:34,964", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:35,055", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:35,063", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:36,189", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:36,286", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:36,287", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:37,205", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:37,255", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:37,262", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:37,936", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:39,122", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:39,123", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:39,869", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:39,981", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:39,983", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:40,698", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:40,943", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:40,943", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:41,920", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:42,048", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:42,053", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:42,684", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:42,776", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:42,786", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:43,464", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:43,591", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:43,591", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:44,175", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:44,275", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:44,275", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:44,887", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:44,951", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:44,955", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:45,912", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:46,824", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:46,826", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:47,653", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:47,783", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:47,786", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:48,885", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:48,984", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:48,991", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:49,881", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:49,980", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:49,981", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:50,724", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:50,857", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:50,861", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:51,755", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:51,840", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:51,842", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:52,773", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:52,905", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:52,905", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:53,593", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:53,729", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:53,732", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:54,617", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:55,610", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:55,613", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:56,563", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:56,674", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:56,676", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:57,689", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:57,802", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:57,804", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:58,426", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:58,485", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:58,485", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:58:59,398", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:58:59,452", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:58:59,453", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:00,165", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:00,352", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:00,355", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:01,077", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:01,215", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:01,216", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:01,886", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:01,978", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:01,979", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:03,027", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:03,712", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:03,717", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:04,548", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:04,666", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:04,669", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:05,504", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:05,635", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:05,636", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:06,600", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:06,722", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:06,723", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:07,620", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:07,784", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:07,785", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:08,441", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:08,513", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:08,514", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:09,172", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:09,310", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:09,310", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:09,977", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:10,052", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:10,057", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:10,795", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:11,702", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:11,703", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:12,440", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:12,574", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:12,576", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:13,307", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:13,408", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:13,412", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:14,075", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:14,240", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:14,242", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:14,894", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:14,995", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:14,995", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:15,607", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:15,737", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:15,740", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:16,524", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:16,657", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:16,666", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:17,347", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:17,571", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:17,572", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:18,373", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 14:59:28,519", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 14:59:28,522", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 14:59:28,817", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 15:00:45,687", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 15:00:45,694", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 15:00:46,130", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 15:00:47,280", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 15:00:47,282", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 15:00:47,665", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 15:00:49,745", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 15:00:49,745", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 15:00:49,964", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 15:00:54,053", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 15:00:54,055", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 15:00:54,424", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 15:01:35,515", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 15:01:35,517", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 15:01:35,876", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 15:04:41,784", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 15:04:41,784", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 15:04:42,228", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 15:09:03,051", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 15:09:03,053", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 15:09:03,397", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 15:20:41,847", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 15:20:41,847", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 15:20:42,263", "level": "ERROR", "name": "__main__", "message": "AuthenticationError during chat request: <empty message>"}
+{"time": "2023-06-03 17:44:44,518", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 17:44:44,518", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 17:44:45,649", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 17:44:45,677", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 17:44:45,677", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 17:44:46,930", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 17:44:46,956", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 17:44:46,956", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 17:44:48,137", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 17:44:48,190", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 17:44:48,190", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 17:44:49,307", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 17:44:49,341", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 17:44:49,341", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 17:44:50,372", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 17:44:50,402", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 17:44:50,403", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 17:44:51,255", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 17:44:51,283", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 17:44:51,283", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 17:44:52,621", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 17:44:52,656", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 17:44:52,657", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 17:44:54,425", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 18:06:51,131", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 18:06:51,131", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-03 18:07:49,292", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 18:07:49,322", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 18:07:49,322", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-03 18:08:09,292", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 18:11:28,896", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 18:11:28,898", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-03 18:12:30,303", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 18:12:30,339", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 18:12:30,340", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-03 18:13:03,689", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-03 18:13:03,732", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-03 18:13:03,732", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-03 18:13:47,532", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 15:10:24,426", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 15:10:24,426", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 15:10:27,661", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 15:10:27,710", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 15:10:27,710", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 15:10:29,773", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 15:10:29,819", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 15:10:29,820", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 15:10:31,538", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 15:10:31,571", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 15:10:31,571", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 15:10:32,227", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 15:10:32,284", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 15:10:32,284", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 15:10:35,101", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 15:10:35,139", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 15:10:35,139", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 15:10:37,501", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 15:10:37,537", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 15:10:37,537", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 15:10:39,086", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 15:10:39,116", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 15:10:39,116", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 15:10:41,071", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 15:11:09,374", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 15:11:09,375", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 15:11:09,381", "level": "ERROR", "name": "__main__", "message": "APIConnectionError during chat request"}
+{"time": "2023-06-04 15:11:10,437", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 15:11:10,438", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 15:11:10,443", "level": "ERROR", "name": "__main__", "message": "APIConnectionError during chat request"}
+{"time": "2023-06-04 15:11:12,524", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 15:11:12,525", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 15:11:12,533", "level": "ERROR", "name": "__main__", "message": "APIConnectionError during chat request"}
+{"time": "2023-06-04 15:11:16,572", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 15:11:16,572", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 15:11:16,576", "level": "ERROR", "name": "__main__", "message": "APIConnectionError during chat request"}
+{"time": "2023-06-04 16:51:25,115", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 16:51:25,116", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 16:51:25,854", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 16:51:25,895", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 16:51:25,896", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 16:51:26,489", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 16:51:26,525", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 16:51:26,525", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 16:51:27,411", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 16:51:27,453", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 16:51:27,454", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 16:51:28,337", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 16:51:28,377", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 16:51:28,378", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 16:51:28,967", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 16:51:29,001", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 16:51:29,002", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 16:51:29,839", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 16:51:29,877", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 16:51:29,878", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 16:51:30,564", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 16:51:30,597", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 16:51:30,597", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-04 16:51:31,974", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 17:23:37,750", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 17:23:37,750", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-04 17:23:55,960", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-04 17:23:55,996", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-04 17:23:55,996", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-04 17:24:17,720", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-07 08:46:12,865", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-07 08:46:12,867", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-07 08:46:26,511", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-07 13:41:00,652", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-07 13:41:00,653", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-07 13:41:05,406", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-07 13:41:52,727", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-07 13:41:52,727", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-07 13:41:53,889", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-07 13:41:53,926", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-07 13:41:53,927", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-07 13:41:55,096", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-07 13:41:55,122", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-07 13:41:55,123", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-07 13:41:56,252", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-07 13:41:56,279", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-07 13:41:56,279", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-07 13:41:57,303", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-07 13:41:57,328", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-07 13:41:57,329", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-07 13:41:58,295", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-07 13:41:58,317", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-07 13:41:58,318", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-07 13:41:59,669", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-07 13:41:59,703", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-07 13:41:59,703", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-07 13:42:01,487", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-07 13:42:01,525", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-07 13:42:01,525", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-07 13:42:03,836", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 03:02:03,138", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 03:02:03,150", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-12 03:02:31,711", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 03:02:31,928", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 03:02:31,929", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-12 03:03:13,423", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 03:03:13,462", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 03:03:13,463", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-12 03:03:57,894", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 03:03:57,951", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 03:03:57,953", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-12 03:04:35,891", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 03:04:35,971", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 03:04:35,971", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-12 03:05:19,634", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:16:25,418", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:16:25,434", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-12 10:16:26,463", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:16:26,524", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:16:26,525", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-12 10:16:57,117", "level": "ERROR", "name": "__main__", "message": "RateLimitError during chat request: That model is currently overloaded with other requests. You can retry your request, or contact us through our help center at help.openai.com if the error persists. (Please include the request ID a9856db499f9bdb7890c8c02225abd34 in your message.)"}
+{"time": "2023-06-12 10:16:58,200", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:16:58,203", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-12 10:16:59,165", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:16:59,251", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:16:59,252", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-12 10:16:59,995", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:17:00,149", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:17:00,150", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-12 10:17:00,917", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:17:00,947", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:17:00,947", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-12 10:17:02,278", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:17:02,391", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:17:02,392", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-12 10:17:03,161", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:17:03,194", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:17:03,195", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-12 10:17:03,976", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:17:04,004", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:17:04,004", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-3.5-turbo"}
+{"time": "2023-06-12 10:17:05,309", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:19:20,279", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:19:20,286", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-12 10:20:08,814", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:20:09,005", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:20:09,006", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-12 10:21:20,596", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:21:20,677", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:21:20,677", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-12 10:22:25,313", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:22:25,398", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:22:25,399", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-12 10:23:35,557", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
+{"time": "2023-06-12 10:23:35,635", "level": "INFO", "name": "__main__", "message": "Received a chat request."}
+{"time": "2023-06-12 10:23:35,637", "level": "INFO", "name": "__main__", "message": "Selected model: gpt-4"}
+{"time": "2023-06-12 10:24:28,193", "level": "INFO", "name": "__main__", "message": "ChatGPT response generated successfully."}
