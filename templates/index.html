@@ -28,6 +28,19 @@
 			margin-left: 10px;	
 		}
 		
+		.prompt-label {
+		  width: 95px;
+		  height: 23px;
+		  font-size: 0.9em; 
+		  border-radius: .25rem; /* Rounded corners similar to Bootstrap button */
+		  padding: .5rem; /* Some padding to space the text away from the edges */
+		  color: #fff; /* Added to make the text white */
+		  
+		  display: flex; /* Added to enable flexbox */
+		  justify-content: center; /* Horizontally centers the text */
+		  align-items: center; /* Vertically centers the text */
+		}
+
 		.prompt-set {
 		  max-width: 600px; /* Adjust as necessary */
 		}
@@ -65,6 +78,10 @@
 		#transcribeAndProcessButton {
 			width: calc(2 * 130px + 5px); /* 2 times width of single button + margin (assuming 10px margin) */
 		}
+		
+		#clear-all-button {
+			width: calc(2 * 130px + 5px);
+		}
 
 		#file {
 			width: 80%;
@@ -82,7 +99,14 @@
 			border-radius: .25rem; /* Rounded corners similar to Bootstrap button */
 			padding: .5rem; /* Some padding to space the text away from the edges */
 		}
-		
+
+      #configuration-display div[contenteditable="true"] {
+      border: 1px solid #ccc;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+
 
     </style>
 </head>
@@ -180,15 +204,17 @@
 		<button id="load-configuration" class="btn btn-secondary">Load Prompts</button>
 		<input type="file" id="file-input" style="display: none;">
 	</div>
+	<div id="clear-all-container" class="mt-2">
+	  <button id="clear-all-button" class="btn btn-warning btn-block">Clear All Prompts</button>
+	</div>
 
-    <div class="mt-2 d-inline-block">
+  <div class="mt-2 d-inline-block">
 		<button id="add-prompt" onclick="addPrompt()" class="btn btn-secondary d-inline-block">Add Prompt</button>
 		<button class="btn btn-secondary toggle-btn toggle-btn-addPrompt d-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#additional-prompts" aria-controls="collapseExample">
 	      -
 	    </button>
 	</div>  
 	<div id="additional-prompts" class="collapse show mt-3 mb-3"></div>
-
 	<div class="d-flex align-items-center mt-1">
 		<div class="d-flex align-items-center justify-content-center label-background label-container" data-bs-toggle="collapse" data-bs-target="#inputTextWrapper" aria-controls="inputTextWrapper">
 			<h2 class="mb-0">Input:</h2>
@@ -208,19 +234,44 @@
 		</div>
 	</div>
 
-	<div class="mt-3">
-		<div class="d-flex align-items-center">
-			<div class="d-flex align-items-center justify-content-center label-background label-container" data-bs-toggle="collapse" data-bs-target="#chatgpt-responses-result" aria-controls="chatgpt-responses-result">
-				<h2 class="mb-0">Output:</h2>
-			</div>
-			<div class="ml-3">
-				<button class="btn btn-secondary toggle-btn toggle-btn-output" type="button" data-bs-toggle="collapse" data-bs-target="#chatgpt-responses-result" aria-controls="chatgpt-responses-result">
-				-
-				</button>
-			</div>
-		</div>
-		<div id="chatgpt-responses-result" class="border p-3 collapse show"></div>
-	</div>
+  <div class="mt-3">
+    <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-center label-background label-container" data-bs-toggle="collapse" data-bs-target="#chatgpt-responses-result" aria-controls="chatgpt-responses-result">
+            <h2 class="mb-0">Output:</h2>
+        </div>
+        <div class="ml-3">
+            <button class="btn btn-secondary toggle-btn toggle-btn-output" type="button" data-bs-toggle="collapse" data-bs-target="#chatgpt-responses-result" aria-controls="chatgpt-responses-result">
+            -
+            </button>
+        </div>
+    </div>
+    <div id="chatgpt-responses-result" class="border p-3 collapse show"></div>
+</div>
+
+<div class="mt-3">
+  <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-center label-background label-container" data-bs-toggle="collapse" data-bs-target="#formatting-data-display" aria-controls="formatting-data-display">
+          <h2 class="mb-0">Formatting Data:</h2>
+      </div>
+      <div class="ml-3">
+          <button class="btn btn-secondary toggle-btn toggle-btn-output" type="button" data-bs-toggle="collapse" data-bs-target="#formatting-data-display" aria-controls="formatting-data-display">
+          -
+          </button>
+      </div>
+  </div>
+  <div id="formatting-data-display" class="border p-3 collapse show">
+    <h3>Metadata:</h3>
+    <div id="metadata-display">
+        <table id="metadata-table" class="table">
+            <!-- The table rows will be added dynamically -->
+        </table>
+    </div>
+    <div id="csv-formatting-display" class="mt-3"></div>
+    <div id="prompt-text-display" class="mt-3"></div>
+    <h3 class="mt-3">CSV Data:</h3>
+    <div id="csv-data-display"></div>
+</div>
+<button id="download-csv" class="btn btn-primary mt-3">Download CSV</button>
 
 
 </div>
@@ -236,6 +287,8 @@ let conversationHistory = [];
 let promptCount = 0;
 let slimSelectInstances = new Map();
 let promptDependencies = new Map();
+let labelColors = ['#E6194B', '#3CB44B', '#FF8C00', '#4363D8', '#F58231', '#911EB4', '#008B8B', '#F032E6', '#228B22', '#DB7093', '#008080', '#9370DB'];
+let currentColorIndex = 0;
 
 // Get the form element
 const uploadForm = document.getElementById("uploadForm");
@@ -244,6 +297,7 @@ const uploadForm = document.getElementById("uploadForm");
 startRecordButton.addEventListener("click", startRecording);
 stopRecordButton.addEventListener("click", stopRecording);
 uploadForm.addEventListener("submit", handleTranscribeButtonClick); // Assuming "transcribeButton" was part of the form submission
+document.getElementById('download-csv').addEventListener('click', downloadCsv);
 
 const transcribeAndProcessButton = document.getElementById("transcribeAndProcessButton");
 transcribeAndProcessButton.addEventListener("click", handleTranscribeAndProcessButtonClick);
@@ -326,15 +380,29 @@ manageCollapse('.toggle-btn[data-bs-target="#additional-prompts"]', '#additional
 manageCollapse('.toggle-btn[data-bs-target="#inputTextWrapper"]', '#inputTextWrapper');
 manageCollapse('.toggle-btn[data-bs-target="#chatgpt-responses-result"]', '#chatgpt-responses-result');
 
+//CLEAR PROMPTS Button
+// Grab the button from the DOM
+const clearAllButton = document.getElementById('clear-all-button');
 
-<!-- function displayErrorMessage(message) { -->
-  <!-- console.log("displayErrorMessage called with message:", message); -->
-  <!-- const chatMessages = document.getElementById("chat-messages"); -->
-  <!-- const errorMessage = document.createElement("div"); -->
-  <!-- errorMessage.textContent = message; -->
-  <!-- errorMessage.style.color = "red"; -->
-  <!-- chatMessages.appendChild(errorMessage); -->
-<!-- } -->
+// Add an event listener for the 'click' event
+clearAllButton.addEventListener('click', function() {
+  // Confirm with the user
+  const confirmed = confirm('Are you sure you want to clear all prompts? This cannot be undone.');
+  
+  if (confirmed) {
+    // Clear existing prompts
+    const promptContainer = document.getElementById("additional-prompts");
+    promptContainer.innerHTML = '';
+
+    // Reset promptCount
+    promptCount = 0;
+
+    // Clear promptDependencies and slimSelectInstances
+    promptDependencies.clear();
+    slimSelectInstances.clear();
+  }
+});
+
 
 function startRecording() {
     console.log('Start recording function called');
@@ -547,75 +615,68 @@ async function handleTranscribeAndProcessButtonClick(event) {
     }
 }
 
+
+
 function addPrompt() {
+  promptCount++; 
+  
+  console.log("Creating new prompt set with ID:", promptCount);
+  console.log("Current promptCount:", promptCount); // New log
+
   const promptContainer = document.getElementById("additional-prompts");
   const newPromptContainer = document.createElement("div");
   newPromptContainer.className = "prompt-set mb-3"; // Added "prompt-set" class
+  newPromptContainer.id = `prompt-set-${promptCount}`; // This is the new ID
+  
+  // Parent div
+  const labelAndButtonDiv = document.createElement("div");
+  labelAndButtonDiv.style.display = "flex";
+  labelAndButtonDiv.style.justifyContent = "space-between";
+  labelAndButtonDiv.style.alignItems = "center";
 
-  promptCount++; 
-
+  // Label div
   const labelDiv = document.createElement("div");
+  labelDiv.style.backgroundColor = labelColors[currentColorIndex];
+  currentColorIndex = (currentColorIndex + 1) % labelColors.length;
+  labelDiv.className = "prompt-label"; // Apply the CSS class
   labelDiv.id = `prompt-label-${promptCount}`;
   labelDiv.textContent = `Prompt ${promptCount}`;
-  newPromptContainer.appendChild(labelDiv);
-  
+  labelAndButtonDiv.appendChild(labelDiv);
+
+  // Remove button
+  const removeButton = document.createElement('button');
+  removeButton.textContent = "Remove Prompt";
+  removeButton.className = "btn btn-danger btn-sm remove-button"; // added remove-button class
+  removeButton.dataset.promptId = promptCount;
+  removeButton.onclick = removePrompt;
+  labelAndButtonDiv.appendChild(removeButton);
+
+  // Append the parent div to the container
+  newPromptContainer.appendChild(labelAndButtonDiv);
+  promptContainer.appendChild(newPromptContainer);
+
   // Source selector 
   const sourceSelectorRow = document.createElement("div"); // Create a new row
   sourceSelectorRow.className = "row";
 
   const sourceSelectorCol = document.createElement('div'); // Create a new column
   sourceSelectorCol.className = "col-12"; // Make it full width
+  sourceSelectorCol.id = `source-selector-container-${promptCount}`; // Add an id to the div
+
+  const sources = generateSourcesArray(promptCount);
 
   // Create select for the sources
-  const sourceSelector = document.createElement('select');
-  sourceSelector.id = `source-selector-${promptCount}`;
-  sourceSelector.multiple = "multiple";
-  
+  const sourceSelector = generateSelectElement(sources, promptCount);
+
   sourceSelectorCol.appendChild(sourceSelector); // Append the sourceSelector to its column
   sourceSelectorRow.appendChild(sourceSelectorCol);
   newPromptContainer.appendChild(sourceSelectorRow);
   
-   // Create placeholder option
-  const placeholderOption = document.createElement('option');
-  placeholderOption.dataset.placeholder = "true"; // This sets the data-placeholder attribute to true
-  sourceSelector.appendChild(placeholderOption);
+  setTimeout(() => {
+    let slimSelectInstance = initializeSlimSelect(sourceSelector);
+    slimSelectInstances.set(`source-selector-${promptCount}`, slimSelectInstance);
+  }, 0);
 
-  // Define sources array
-  const sources = ["Input Text"].concat(
-    Array.from({ length: promptCount - 1 }, (_, i) => `Prompt ${i + 1}`)
-  );
-
-  sources.forEach((source, index) => {
-    const option = document.createElement('option');
-    option.value = index;
-    option.textContent = source;
-    sourceSelector.appendChild(option);
-  });
-
-	// Set a timeout to delay the initialization of Slim Select
-	setTimeout(() => {
-	  let slimSelectInstance = new SlimSelect({
-		select: `#source-selector-${promptCount}`,
-		events: {
-		  afterChange: (newVal) => {
-			updateDependencies(promptCount, newVal);
-		  }
-		},
-		settings: {
-		  closeOnSelect: false,
-		  showSearch: false,    
-		  maxValuesShown: 3, // Default 20
-		  maxValuesMessage: '{number} values selected', // Default '{number} selected'
-		  allowDeselect: true,
-		  placeholderText: 'Add Source',
-
-
-		},
-	  });
-	  // Store the SlimSelect instance in the Map
-	  slimSelectInstances.set(`source-selector-${promptCount}`, slimSelectInstance);
-	}, 0);
-  
   // Model selector
   const modelSelectorRow = document.createElement("div"); // Create a new row
   modelSelectorRow.className = "row";
@@ -631,13 +692,22 @@ function addPrompt() {
   modelSelectorRow.appendChild(modelSelectorCol);
   newPromptContainer.appendChild(modelSelectorRow);
   
-  const models = ["gpt-3.5-turbo", "gpt-4", "gpt-4-32k"]; // Replace with actual model names or options
+    const models = [
+    "gpt-3.5-turbo-16k", 
+    "gpt-4",
+    "gpt-4-0613",
+    "gpt-4-0314",
+    "gpt-3.5-turbo-16k-0613",
+    "gpt-3.5-turbo-0301", 
+    "gpt-3.5-turbo", 
+    "gpt-3.5-turbo-0613", 
+  ];
+
   models.forEach((model, index) => {
     const option = document.createElement("option");
     option.value = index;
     option.text = model;
     modelSelector.add(option);
-    <!-- console.log(`Model selector option value for prompt ${promptCount}: ${option.value}`); -->
   });
 
   // System prompt input
@@ -676,31 +746,213 @@ function addPrompt() {
   
   promptContainer.appendChild(newPromptContainer);
 
+function removePrompt(e) {
+  const promptToRemove = Number(e.target.dataset.promptId); // Number conversion
+  console.log("Remove button clicked with prompt ID:", promptToRemove);
+  console.log("removePrompt called. promptToRemove:", promptToRemove, "current promptDependencies:", JSON.stringify([...promptDependencies]));
+
+	// Check if the prompt to be removed is a source for any other prompts
+	const dependentPrompts = [];
+	console.log("Checking for dependent prompts. promptToRemove:", promptToRemove);
+	promptDependencies.forEach((dependentPromptIds, sourceKey) => {
+	  const sourceIds = JSON.parse(sourceKey);
+	  console.log("sourceKey:", sourceKey, "sourceIds:", sourceIds);
+	if (sourceIds.some(source => source.value == promptToRemove)) {
+		dependentPrompts.push(...dependentPromptIds);
+	}
+
+	});
+
+	// If the prompt is a source for others, confirm with the user before proceeding
+	if (dependentPrompts.length > 0) {
+	console.log("After checking for dependent prompts. dependentPrompts:", dependentPrompts);
+	  const confirmed = confirm(`This prompt is used as a source by prompts ${dependentPrompts.join(', ')}. Are you sure you want to remove it?`);
+	  if (!confirmed) return;
+	}
+
+  // Remove the prompt from its dependencies
+  removePromptFromDependencies(promptToRemove);
+
+  // Remove the prompt's SlimSelect instance
+  slimSelectInstances.delete(`source-selector-${promptToRemove}`);
+
+  let sources; // Declare `sources` outside of the loop
+
+	// Step 1: Renumber all prompts
+	for (let i = promptToRemove + 1; i <= promptCount; i++) {
+	  console.log("Renumbering prompt:", i, "ID:", i - 1);
+
+	  // Update display number and HTML IDs
+	  const promptSet = document.getElementById(`prompt-set-${i}`);
+	  const promptLabel = document.getElementById(`prompt-label-${i}`);
+	  const removeButton = document.querySelector(`#prompt-set-${i} .remove-button`);
+
+	  // Retrieve the systemPrompt, userPrompt and modelSelector elements
+	  const systemPrompt = document.getElementById(`system-prompt-${i}`);
+	  const userPrompt = document.getElementById(`user-prompt-${i}`);
+	  const modelSelector = document.getElementById(`model-selector-${i}`);
+
+	  // Update the elements if they exist
+	  [promptSet, promptLabel, systemPrompt, userPrompt, modelSelector].forEach((element, index) => {
+		if (element) {
+		  const elementType = ['prompt-set', 'prompt-label', 'system-prompt', 'user-prompt', 'model-selector'][index];
+		  element.id = `${elementType}-${i - 1}`;
+
+		  if (element === promptLabel) {
+			element.textContent = `Prompt ${i - 1}`;
+		  }
+
+		  if (element === systemPrompt) {
+			element.name = systemPrompt.id;
+			element.placeholder = `Enter system prompt ${i - 1}`;
+		  }
+
+		  if (element === userPrompt) {
+			element.name = userPrompt.id;
+			element.placeholder = `Enter user prompt ${i - 1}`;
+		  }
+
+		  if (element === modelSelector) {
+			element.name = modelSelector.id;
+		  }
+		}
+	  });
+
+	  if (removeButton) {
+		removeButton.dataset.promptId = i - 1;
+	  }
+
+	  // Update the source selectors
+	  const oldSelect = document.getElementById(`source-selector-${i}`);
+	  let oldSlimSelectInstance = slimSelectInstances.get(oldSelect.id);
+	  const oldSources = oldSlimSelectInstance.getSelected().map(Number);
+	  const newSources = oldSources.map(id => id > promptToRemove ? id - 1 : id);
+
+	  // Update the promptDependencies map
+	  const oldDependentPrompts = promptDependencies.get(i) || [];
+	  const newDependentPrompts = oldDependentPrompts.map(id => id > promptToRemove ? id - 1 : id);
+	  if (newDependentPrompts.length > 0) {
+		promptDependencies.set(i - 1, newDependentPrompts);
+		console.log("After updating promptDependencies map during renumbering. i:", i, "newDependentPrompts:", newDependentPrompts, "current promptDependencies:", JSON.stringify([...promptDependencies]));
+	  }
+
+	  // Destroy the old SlimSelect instance
+	  if (oldSlimSelectInstance) {
+		oldSlimSelectInstance.destroy();
+		slimSelectInstances.delete(oldSelect.id);
+	  }
+
+	  // Step 2: Update sources array
+	  const sources = generateSourcesArray(i - 1);
+
+	  // Step 3: Update SlimSelect dropdown menu
+	  const newSelect = generateSelectElement(sources, i - 1);
+	  oldSelect.parentNode.replaceChild(newSelect, oldSelect);
+
+	  // Initialize the new SlimSelect instance and add it to the map
+	  const newSlimSelectInstance = initializeSlimSelect(newSelect);
+	  slimSelectInstances.set(newSelect.id, newSlimSelectInstance);
+
+	  // Update the selected sources
+	  newSlimSelectInstance.setSelected(newSources);
+	  
+	  document.querySelector(`#prompt-set-${i - 1} button`).dataset.promptId = i - 1;
+	}
+
+	// Remove the prompt from the DOM
+	const promptSetToRemove = document.getElementById(`prompt-set-${promptToRemove}`);
+	if (promptSetToRemove) promptSetToRemove.parentNode.removeChild(promptSetToRemove);
+
+	// Decrement `promptCount`
+	promptCount--;
+	console.log("Current promptCount after decrement:", promptCount);
+
+  // Log the dataset of the remove button for each remaining prompt set
+  for (let i = 1; i <= promptCount; i++) {
+    const removeButton = document.querySelector(`#prompt-set-${i} button`);
+    console.log(`Remove button dataset after renumbering (Prompt set ${i}):`, removeButton.dataset); // New log
+  }
+}
+ 
 //FUNCTION TO POPULATE PROMPT DEPENDENCIES MAP
 function updateDependencies(promptId, newValues) {
+console.log("updateDependencies called. promptId:", promptId, "newValues:", newValues);  
   // Remove the prompt from its current dependencies
   removePromptFromDependencies(promptId);
 
   // Add the prompt to its new dependencies
   if (newValues.length !== 0) {
     const sourceKey = JSON.stringify(newValues.sort());
+	console.log("sourceKey:", sourceKey, "current promptDependencies:", JSON.stringify([...promptDependencies]));
     if (!promptDependencies.has(sourceKey)) {
       promptDependencies.set(sourceKey, []);
     }
     promptDependencies.get(sourceKey).push(promptId);
+	console.log("Updating dependencies for prompt:", promptId, "New values:", newValues);
+	console.log("End of updateDependencies. Updated promptDependencies:", JSON.stringify([...promptDependencies]));
   }
 }
 
 //FUNCTION TO REMOVE DEPENDENCY WHEN A PROMPT IS REMOVED
 function removePromptFromDependencies(promptId) {
+console.log("removePromptFromDependencies called. promptId:", promptId, "current promptDependencies:", JSON.stringify([...promptDependencies]));
   promptDependencies.forEach((dependentPrompts, sources) => {
+    console.log("Removing dependencies for prompt:", promptId, "Sources:", sources);
     const index = dependentPrompts.indexOf(promptId);
     if (index !== -1) {
       dependentPrompts.splice(index, 1);
     }
+	console.log("Removed promptId:", promptId, "from dependencies:", dependentPrompts); 
     if (dependentPrompts.length === 0) {
       promptDependencies.delete(sources);
     }
+  });
+}
+
+function generateSourcesArray(promptId) {
+  return ["Input Text"].concat(
+    Array.from({ length: promptId - 1 }, (_, i) => `Prompt ${i + 1}`)
+  );
+}
+
+function generateSelectElement(sources, promptId) {
+  const sourceSelector = document.createElement('select');
+  sourceSelector.id = `source-selector-${promptId}`;
+  sourceSelector.multiple = "multiple";
+
+  // Create placeholder option
+  const placeholderOption = document.createElement('option');
+  placeholderOption.dataset.placeholder = "true"; // This sets the data-placeholder attribute to true
+  sourceSelector.appendChild(placeholderOption);
+
+  // Populate options
+  sources.forEach((source, index) => {
+    const option = document.createElement('option');
+    option.value = index;
+    option.textContent = source;
+    sourceSelector.appendChild(option);
+  });
+
+  return sourceSelector;
+}
+
+function initializeSlimSelect(selectElement) {
+  return new SlimSelect({
+    select: selectElement,
+    events: {
+      afterChange: (newVal) => {
+        const promptId = parseInt(selectElement.id.split('-')[2]);
+        updateDependencies(promptId, newVal);
+      }
+    },
+    settings: {
+      closeOnSelect: false,
+      showSearch: false,    
+      maxValuesShown: 3, // Default 20
+      maxValuesMessage: '{number} values selected', // Default '{number} selected'
+      allowDeselect: true,
+      placeholderText: 'Add Source',
+    },
   });
 }
 
@@ -709,39 +961,52 @@ function removePromptFromDependencies(promptId) {
 function savePromptConfiguration() {
   const promptContainer = document.getElementById("additional-prompts");
   let prompts = [];
+  
+  // Retrieve the metadata, CSV formatting, and prompt text from local storage
+  let metadata = JSON.parse(localStorage.getItem(instanceKey + '-prompts')) || [];
+  let csvFormatting = JSON.parse(localStorage.getItem(instanceKey + '-csvFormatting')) || {};
+  let promptText = JSON.parse(localStorage.getItem(instanceKey + '-promptText')) || {};
+
   for (let i = 0; i < promptContainer.children.length; i++) {
     let promptDiv = promptContainer.children[i];
-	let sourceSelectorId = `source-selector-${i+1}`;
-	let slimSelectInstance = slimSelectInstances.get(sourceSelectorId);
-	if (!slimSelectInstance) {
-	  alert(`Error: Unable to save configuration. SlimSelect instance not found for ${sourceSelectorId}.`);
-	  return; // Stop the save operation
-	}
-	let selectedValues = slimSelectInstance.getSelected();
+    let sourceSelectorId = `source-selector-${i+1}`;
+    let slimSelectInstance = slimSelectInstances.get(sourceSelectorId);
+    if (!slimSelectInstance) {
+      alert(`Error: Unable to save configuration. SlimSelect instance not found for ${sourceSelectorId}.`);
+      return; // Stop the save operation
+    }
+    let selectedValues = slimSelectInstance.getSelected();
     let modelSelector = promptDiv.querySelector(`#model-selector-${i+1}`);
     let systemPrompt = promptDiv.querySelector(`#system-prompt-${i+1}`);
     let userPrompt = promptDiv.querySelector(`#user-prompt-${i+1}`);
 
-	// Check if all elements exist and have the expected values, handle errors otherwise
-	if (!slimSelectInstance || !modelSelector || !systemPrompt || !userPrompt) {
-	  alert(`Error: Unable to save configuration. Prompt ${i+1} is incomplete or has unexpected values.`);
-	  return; // Stop the save operation
-	}
+    // Check if all elements exist and have the expected values, handle errors otherwise
+    if (!slimSelectInstance || !modelSelector || !systemPrompt || !userPrompt) {
+      alert(`Error: Unable to save configuration. Prompt ${i+1} is incomplete or has unexpected values.`);
+      return; // Stop the save operation
+    }
     
-	// Create JSON object for each prompt
-	let prompt = {
-	  source: selectedValues,
-	  model: modelSelector.value,
-	  systemPrompt: systemPrompt.value,
-	  userPrompt: userPrompt.value
-	};
+    // Create JSON object for each prompt
+    let prompt = {
+      source: selectedValues,
+      model: modelSelector.value,
+      systemPrompt: systemPrompt.value,
+      userPrompt: userPrompt.value
+    };
     
     // Add the prompt to the prompts array
     prompts.push(prompt);
   }
 
-  // Convert the prompts array into a JSON string
-  let promptConfiguration = JSON.stringify(prompts);
+  // Combine the prompts, metadata, csvFormatting, and promptText into a single object
+  let outputData = {
+    prompts: prompts,
+    csvFormatting: csvFormatting,
+    promptText: promptText
+  }
+
+  // Convert the outputData object into a JSON string
+  let promptConfiguration = JSON.stringify(outputData);
 
   // Return the prompt configuration
   return promptConfiguration;
@@ -750,23 +1015,17 @@ function savePromptConfiguration() {
 function saveToFile(content, fileName) {
   // Create a Blob with the content
   let blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-  
   // Create a URL for the Blob
   let url = URL.createObjectURL(blob);
-
   // Create an 'a' element
   let a = document.createElement("a");
-
   // Set the 'href' and 'download' attributes
   a.href = url;
   a.download = fileName;
-
   // Append the 'a' element to the body
   document.body.appendChild(a);
-
   // Trigger a click event on the 'a' element
   a.click();
-
   // Remove the 'a' element from the body
   document.body.removeChild(a);
 }
@@ -779,12 +1038,63 @@ document.getElementById("save-configuration").addEventListener("click", function
   saveToFile(promptConfiguration, "promptConfiguration.json");
 });
 
-async function loadPromptConfiguration(promptConfiguration) {
-  console.log('Loading configuration:', promptConfiguration);
+async function loadPromptConfiguration(promptConfigurationText) {
+  console.log('Loading configuration:', promptConfigurationText);
 
   try {
-    // Parse the JSON string
-    let prompts = JSON.parse(promptConfiguration);
+    // Parse the JSON string into an object
+    let promptConfiguration = JSON.parse(promptConfigurationText);
+
+    // Extract the prompts and CSV formatting info, handling missing fields
+    let prompts = promptConfiguration.prompts || [];
+    let csvFormatting = promptConfiguration.csvFormatting || { columnOrder: [], rowOrder: [] };
+    let promptText = promptConfiguration.promptText || {};
+
+    // Populate the new section with the metadata
+    let metadataDisplay = document.getElementById('metadata-display');
+    let tableHTML = '<h3>Metadata:</h3><table>';
+    for (let i = 0; i < prompts.length; i++) {
+      let promptMetadata = prompts[i].metadata || {};
+      for (let key in promptMetadata) {
+        tableHTML += `
+          <tr id="metadata-row-${i+1}-${key}">
+            <td>Prompt ${i+1}</td>
+            <td>${key}</td>
+            <td contenteditable="true">${promptMetadata[key] || ''}</td>
+          </tr>
+        `;
+      }
+    }
+    console.log('Created table HTML:', tableHTML);  // Log statement
+    tableHTML += '</table>';
+    metadataDisplay.innerHTML = tableHTML;
+
+    // Populate the new section with the CSV formatting
+    let csvFormattingDisplay = document.getElementById('csv-formatting-display');
+    csvFormattingDisplay.innerHTML = `
+        <h3>CSV Formatting:</h3>
+        <div>
+            <span>Column Order:</span>
+            <div id="column-order" data-column-order="${csvFormatting.columnOrder.join(', ')}" contenteditable="true">${csvFormatting.columnOrder.join(', ')}</div>
+        </div>
+        <div>
+            <span>Row Order:</span>
+            <div id="row-order" data-row-order="${csvFormatting.rowOrder.join(';;;')}" contenteditable="true">${csvFormatting.rowOrder.join(';;;')}</div>
+        </div>
+    `;
+
+    // Populate the new section with the prompt text
+    let promptTextDisplay = document.getElementById('prompt-text-display');
+    let promptTextHTML = '<h3>Prompt Text:</h3>';
+    for (let key in promptText) {
+      promptTextHTML += `
+        <div>
+          <span>${key}:</span>
+          <div contenteditable="true">${promptText[key] || ''}</div>
+        </div>
+      `;
+    }
+    promptTextDisplay.innerHTML = promptTextHTML;
 
     // Reset promptCount
     promptCount = 0;
@@ -797,7 +1107,7 @@ async function loadPromptConfiguration(promptConfiguration) {
     for (let i = 0; i < prompts.length; i++) {
       // Call addPrompt() to create a new prompt, and pause for a delay
       await new Promise(resolve => {
-        addPrompt();
+        addPrompt(prompts[i].metadata);  // Pass the metadata to addPrompt
         setTimeout(resolve, 0);  // Adjust the delay as needed
       });
 
@@ -949,14 +1259,14 @@ async function promptChainProcessing() {
 		  return promptResults[index];
 		}
 		const inputText = await getPromptSourceText(index);    
-		const result = await new Promise((resolve) => {
+    const { result, promptMetadata } = await new Promise((resolve) => {
 		  setTimeout(async () => {
 			const processedResult = await processPrompt(index, promptResults, inputText);
 			resolve(processedResult);
 		  }, 0);
 		});
 		promptResults[index] = result.content; // Store only the content		
-		displayPromptResults(index, promptResults[index]); // Call displayPromptResults right after storing the result
+    displayPromptResults(index, promptResults[index], promptMetadata); // Pass the promptMetadata and results
 		
 		if (promptDependencies.has(index)) {
 		  const dependentPromptIndexes = promptDependencies.get(index);
@@ -1001,6 +1311,7 @@ async function promptChainProcessing() {
 
 async function processPrompt(index, promptResults, inputText = null) {
   console.log(`Processing prompt ${index}`);
+  
   if (index === 0) {
     return null; // Line to handle the case when index is 0
   }
@@ -1009,6 +1320,7 @@ async function processPrompt(index, promptResults, inputText = null) {
   const userPromptId = `user-prompt-${index}`;
   const systemPromptElement = document.getElementById(systemPromptId);
   const userPromptElement = document.getElementById(userPromptId);
+ 
   // Combine inputText with user prompt if inputText is provided
   const combinedText = inputText ? `${userPromptElement.value} ${inputText}` : userPromptElement.value;
   const conversationHistory = [
@@ -1018,11 +1330,61 @@ async function processPrompt(index, promptResults, inputText = null) {
   const modelSelectorId = `model-selector-${index}`;
   const modelSelector = document.getElementById(modelSelectorId);
   const model = modelSelector.options[modelSelector.selectedIndex].text;
+ 
+  // Get the case title and role for this prompt from the metadata table
+  let caseTitleRow = document.getElementById(`metadata-row-${index}-caseTitle`);
+  let roleRow = document.getElementById(`metadata-row-${index}-role`);
+  // Default values for caseTitle and role
+  let caseTitle = "No case title provided";
+  let role = "No role provided";
+  // If the rows exist, get the case title and role from the cells in the row
+  if (caseTitleRow && roleRow) {
+    caseTitle = caseTitleRow.cells[2].textContent;
+    role = roleRow.cells[2].textContent;
+  }
+  // Generate the prompt input data
+  let promptInput = systemPromptElement.value + ' ' + combinedText;
+  // Create a metadata object with the prompt role and input
+  let promptMetadata = { caseTitle, promptRole: role, promptInput }; 
+ 
+  console.log('About to call API...');
   const result = await callAPI({ conversation_history: conversationHistory }, model);
-  return result;
+
+  // Return the prompt output (result) along with the metadata
+  return { result, promptMetadata };
 }
 
-function displayPromptResults(index, result) {
+function processResponse(promptMetadata) {
+  // Get the current data from the UI
+  let csvDataDisplayContent = document.getElementById('csv-data-display').textContent;
+  let data = csvDataDisplayContent ? JSON.parse(csvDataDisplayContent) : [];
+
+  // Find the object for this case, or create a new one
+  let caseData = data.find(d => d.caseTitle === promptMetadata.caseTitle) || { 
+    caseTitle: promptMetadata.caseTitle, 
+    promptResponses: [] 
+  };
+  
+  // Create an object for this prompt response
+  let promptResponse = {
+    role: promptMetadata.promptRole,
+    input: promptMetadata.promptInput,
+    output: promptMetadata.promptOutput
+  };
+
+  // Add this prompt response to the promptResponses of caseData
+  caseData.promptResponses.push(promptResponse);
+
+  // If the caseData was not found, it means it's a new caseData and we need to add it to the data
+  if (!data.includes(caseData)) {
+    data.push(caseData);
+  }
+
+  // Store the updated data back to the UI
+  document.getElementById('csv-data-display').textContent = JSON.stringify(data);
+}
+
+function displayPromptResults(index, result, promptMetadata) {
   const chatGPTResponsesResult = document.getElementById("chatgpt-responses-result");
   const responseContainer = document.createElement("div");
   responseContainer.innerHTML = `<h4>Prompt ${index}:</h4>`;
@@ -1033,6 +1395,143 @@ function displayPromptResults(index, result) {
     responseContainer.innerHTML += "No response for this prompt.";
   }
   chatGPTResponsesResult.appendChild(responseContainer);
+
+  // Check if promptMetadata exists
+  if (promptMetadata) {
+    console.log('Metadata exists for this prompt');
+    // Add the prompt output to the metadata
+    promptMetadata.promptOutput = result;
+    // Process the response with the updated metadata
+    processResponse(promptMetadata);
+  } else {
+    console.log(`No metadata exists for prompt ${index}`);
+  }
+}
+
+
+function generateCsv() {
+  // Retrieve the CSV data from 'csv-data-display'
+  let data = JSON.parse(document.getElementById('csv-data-display').textContent) || [];
+
+  // Retrieve the CSV formatting metadata (column order and row order) from the UI
+  let columnOrder = (document.getElementById('column-order').dataset.columnOrder || '')
+    .split(', ')
+    .map(role => `${role}.output`);
+  columnOrder.unshift('caseTitle');  // Adding 'caseTitle' at the beginning of the column order
+  let rowOrder = (document.getElementById('row-order').dataset.rowOrder || '').split(';;;');
+  let csvFormatting = { columnOrder, rowOrder };
+
+  // Retrieve the metadata
+  let promptTextDisplay = document.getElementById('prompt-text-display');
+  let promptText = {};
+  for (let i = 0; i < promptTextDisplay.children.length; i++) {
+    let div = promptTextDisplay.children[i];
+
+    // Check if the current child is a div with the expected structure
+    if (div.tagName !== 'DIV') continue;  // Skip non-div children
+
+    let span = div.querySelector('span');
+    let innerDiv = div.querySelector('div');
+
+    if (span && innerDiv) {
+        let key = span.innerText.replace(':', '');
+        let value = innerDiv.innerText;
+        promptText[key] = value;
+    } else {
+        console.error(`Error: Unexpected structure in child div ${i}`);
+        console.log('Div:', div.outerHTML);
+    }
+}
+
+    let dataForInputs = {};
+  for (let caseData of data) {
+    for (let promptResponse of caseData.promptResponses) {
+      if (!dataForInputs[promptResponse.role]) {
+        dataForInputs[promptResponse.role] = promptResponse.input;
+      }
+    }
+  }
+
+  // Stringify the dataForInputs object
+  let dataForInputsString = JSON.stringify(dataForInputs);
+
+  let metadata = {
+  'Prompt Text': promptText,
+  'Inputs': dataForInputsString,
+  };
+
+  // Create a CSV string with metadata, a header row based on the column order, and data rows.
+  let csv = '';
+  
+  // Add the metadata to the CSV
+  for (let key in metadata) {
+    if (typeof metadata[key] === 'object') {
+      // If the metadata is an object, add each key-value pair as a separate row
+      for (let subKey in metadata[key]) {
+        let value = metadata[key][subKey];
+        csv += `"${subKey}"| "${String(value).replace(/"/g, '""')}"\n`; // wrap value in double quotes and escape any existing double quotes
+      }
+    } else {
+      let value = metadata[key];
+      csv += `"${key}"| "${String(value).replace(/"/g, '""')}"\n`; // wrap value in double quotes and escape any existing double quotes
+    }
+  }
+
+  // Add two empty rows for separation
+  csv += '\n\n';
+
+  // Add the header row
+  csv += csvFormatting.columnOrder.map(column => {
+      let headerName = column.split('.')[0]; // This removes ".output"
+      return `"${headerName}"`;
+  }).join('|') + '\n';
+
+  // For each case title in the row order, find the corresponding data object and create a row in the CSV string with the properties in the correct order.
+  for (let caseTitle of csvFormatting.rowOrder) {
+    let caseData = data.find(d => d.caseTitle.trim() === caseTitle.trim());
+    
+    if (caseData) {
+      let row = csvFormatting.columnOrder.map(column => {
+        if (column === 'caseTitle') {
+          return `"${caseTitle.trim()}"`;
+        } else {
+          // find the promptResponse with the corresponding role and retrieve its output
+          let role = column.split('.')[0]; // This will turn "initialPrompt.output" into "initialPrompt"
+          let promptResponse = caseData.promptResponses.find(pr => pr.role === role);
+          if (promptResponse) {
+            // replace newline characters with \\n
+            let output = promptResponse.output.replace(/\n/g, '\\n');
+            return `"${output}"`;
+          } else {
+            console.log(`No promptResponse found for role: "${role}" in case title: "${caseTitle}"`);  // Log for debugging
+            return '""';
+          }
+        }
+      }).join('|');
+
+      csv += row + '\n';
+    } else {
+      console.log(`No data found for case title: "${caseTitle}"`);
+    }
+  }
+
+  // Return the CSV string.
+  return csv;
+}
+
+
+function downloadCsv() {
+  // Generate the CSV string
+  let csv = generateCsv();
+
+  // Create a Blob object from the CSV string
+  let csvBlob = new Blob([csv], {type: 'text/csv'});
+
+  // Create a download link and click it
+  let link = document.createElement('a');
+  link.href = URL.createObjectURL(csvBlob);
+  link.download = 'data.csv';
+  link.click();
 }
 
 </script>

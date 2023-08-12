@@ -21,7 +21,7 @@ if not os.path.exists(log_dir):
 
 log_file = os.path.join(log_dir, "app.log")
 
-handler = RotatingFileHandler(log_file, maxBytes=10000000, backupCount=10)  # 10 MB file size limit, keep last 10 files
+handler = RotatingFileHandler(log_file, maxBytes=10000000, backupCount=10, encoding='utf-8')  # 10 MB file size limit, keep last 10 files
 formatter = logging.Formatter(
     '{"time": "%(asctime)s", "level": "%(levelname)s", "name": "%(name)s", "message": "%(message)s"}'
 )
@@ -52,6 +52,9 @@ def chat():
     logger.info('Selected model: %s', model)  # Log the selected model
 
     try:
+        # TODO: Remember to remove this log statement before committing to GitHub as it's for test purposes only
+        logger.info('Sending the following messages to OpenAI: %s', messages)  
+
         response = openai.ChatCompletion.create(
             model=model,
             messages=messages,
